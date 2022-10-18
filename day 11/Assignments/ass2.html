@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	<h3> jQuery  -  Getting remote data  from  Server </h3>
+	<hr />
+ Employee number :
+ <input type="text"id="i1"/>
+ Employee name :
+ <input type="text"id="i2"/>
+ Job:
+ <select id="i3">
+    <option>Analyst</option>
+    <option>Tax</option>
+    <option>Consulting</option>
+ </select>
+ Department no:
+ <input type="text"id="i4"/><br><br>
+	<button  id="b1">Get Server Data</button>
+	<button  id="b2">Send Data to Server </button>
+	<hr/>
+	<table  id="table1"  border="1"  cellpadding="5"  cellspacing="0"  width="600">
+		<tr>
+			<th>Employee number</th>
+			<th>Employee Name</th>
+			<th>Job</th>
+            <th>Department no</th>
+		</tr>
+		
+	</table>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+
+<script>
+			$(document).ready(function(){
+			
+				  $("#b1").click(function(){				  
+							  $.ajax(
+								{
+									url : "  http://localhost:3000/depts",
+									type: "GET",
+									success :  function(response)
+									{
+										console.log(response);	
+									    displayData(response );
+									}		
+								});				 
+				});
+			
+			  $("#b2").click(function(){		
+
+					// 		var  newCustomerObj = {Name: 'Ravi Kiran', City: 'Pune', Country: 'India'};		
+							var  newCustomerObj = {};
+							newCustomerObj.empno  =   $("#i1").val();
+							newCustomerObj.ename  =   $("#i2").val();
+							newCustomerObj.job  =     $("#i3").val();
+                            newCustomerObj.deptno  =     $("#i4").val();
+			  
+							   $.ajax(
+								{
+									url : "http://localhost:3000/depts",
+									type: "POST",
+									data :   newCustomerObj,
+									success :  function(response)
+									{
+										console.log(response);	
+									    alert("New Customer Details are saved in server");
+									}		
+								});				 
+				});
+ 
+	});
+			
+			
+			function   displayData(resData)
+			{
+				//	console.log(resData);
+				
+				// Clear table except header row (first row)
+				
+			//	$("#table1  td").parent().remove();
+			//	$("#table1").find("tr:gt(0)").remove();
+			//	$("#table1   tr:not(:first)").remove();
+				$("#table1   tr").not(":first").remove();
+				
+								
+				for(let  item  of  resData)
+				{
+						let  str  = `<tr>  <td> ${item.empno} </td>  <td>${item.ename}</td>  <td>${item.job}</td> <td>${item.deptno}</td>  </tr>`;				
+						$("#table1").append(str);
+					
+				}
+				
+				
+			 $("#table1  tr:even").css("background-color",  "Pink");
+			 $("#table1  tr:odd").css("background-color",  "lightblue");
+			 
+			 $("#table1  tr:first").css("background-color",  "lightgreen");
+			 
+					
+				
+			
+			}
+			
+			
+
+</script>
+
+</body>
+</html>

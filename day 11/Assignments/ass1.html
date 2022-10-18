@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>
+            string methods
+        </title>
+        <style>
+            th{
+                border:2px solid black;
+                margin:2px;
+            }
+            td{
+                border:2px solid black;
+                width:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>String methods in jQuery</h1>
+        <hr/>
+        <input type="button"id="b1"value="Get Data"/><br><br>
+        <table id="table1" style="border:2px solid gray;width:500px;">
+           <tr>
+                <td>Credit Card Number</td>
+                <td id="cardno"></td>
+           </tr>
+           <tr>
+            <td>Card Holder name</td>
+            <td id="chname"></td>
+       </tr>
+       <tr>
+        <td>Card Type</td>
+        <td id="ctype"></td>
+   </tr>
+   <tr>
+    <td>Expiry Date</td>
+    <td id="edate"></td>
+</tr>
+         </table>
+        <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+            $("#b1").click(function()
+		{
+				let customerObj={cardNumber:1234456778997896, chName:"NarasimHa rAo",cardType:"Visa",expireMonth : 12, expireYear : 2023};
+               
+                var cardnum= customerObj.cardNumber.toString(); 
+                var tableObj=document.getElementById("table1");
+                console.log(cardnum.slice(12,16));
+                $("#cardno").html("****-****-****-"+cardnum.slice(12,16));
+                $("#chname").html(customerObj.chName[0].toUpperCase()+customerObj.chName.slice(1).toLowerCase());
+                $("#ctype").html(customerObj.cardType.toUpperCase());
+
+                const dateObj=new Date();
+                dateObj.setMonth(customerObj.expireMonth);
+                const monthNameShort = dateObj.toLocaleString("en-US", { month: "short" });
+                console.log(monthNameShort);
+                $("#edate").html(monthNameShort+" "+customerObj.expireYear);
+
+    
+		});
+        </script>
+    </body>
+</html>
