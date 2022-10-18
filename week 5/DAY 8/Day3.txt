@@ -1,0 +1,58 @@
+1.
+
+Types of selectiors in CSS:
+
+Simple selectors - selecting by id, name, class
+Combinator selectors - selecting based on the relationship between them
+pseudo-class selectors - selecting elements based on  certain state
+pseudo-elements selectors - selectingand styling certain part of element
+attribute selectors - selecting elements basing on attribute value
+
+Eg:
+
+p{};
+#id{};
+.class{};
+p.class{};
+<p = "class1 class2">{};
+*{};
+h1,h2,p{};
+
+2.
+
+CDN - A content delivery network (CDN) refers to a geographically distributed group of servers which work 
+together to provide fast delivery of Internet content.
+-Comfortable to use
+-Reduces traffic and DDOS attacks
+-Improve website load times
+-Reduce bandwidth costs
+-Improve website security
+
+3.
+
+"this" - DOM object whereas $(this) - equivalent but in terms of jQuery.
+The difference is that in "this" we can use DOM methods but cant involve jQuery methods, 
+whereas in $(this), we can call jQuery methods but not DOM methods.
+
+4.
+
+In order to manipulate the page, the document need to be ready. The line $(document).ready() in jQuery 
+checks this readiness of document object model(DOM) and the code inside will run once
+the DOM is ready.
+
+5.
+
+The on() method attaches one or more event handlers for the selected elements.
+
+
+$("p").on("click", function(){
+  $(this).hide();
+});
+
+6.
+
+$('input[type=text], textarea').css({width: '90%'});
+That uses standard CSS selectors, jQuery also has a set of pseudo-selector filters for various form elements, for example:
+
+$(':text').css({width: '90%'});
+will match all <input type="text"> elements.

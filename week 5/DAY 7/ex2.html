@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<body>
+<h3>Asynchronous Programming in  JavaScript</h3>
+	<hr/> 
+	 
+	<script>
+			 
+			const   myPromise = new Promise(  (resolve,  reject) => 
+			{				 
+				 var  data  =  "Content that is prepared by promise"; 
+					//var  data  = [10,20,30]; 
+				   resolve(data);
+			});
+			 
+			console.log("Before promise task is invoked");
+		
+			myPromise.then( (response)  => 
+			{
+				 console.log(response);
+			});
+			
+			
+			console.log("After promise task is invoked");
+		
+	</script>	 
+</body>
+</html>

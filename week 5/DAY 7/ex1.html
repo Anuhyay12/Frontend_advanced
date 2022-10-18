@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+<h3>Asynchronous Programming in  JavaScript</h3>
+	<hr/> 
+	 
+	<script>
+			
+		// 	const   myPromise = new Promise(callback);		
+			const   myPromise = new Promise(  (resolve,  reject) => 
+			{
+					//	console.log("Promise task is executing");
+					//	resolve("Message from Promise -- task resolved.");
+					var  result  =  "Promise task is resolved.";
+					
+					setTimeout(  () => {
+							 resolve(result);
+					}, 
+					5000);
+					
+					
+			});
+			
+			
+		//	myPromise.then( success_callback ).catch(error_callback);
+		
+			console.log("Before promise task is invoked");
+			myPromise.then( ()  => 
+			{
+				console.log("Promise task is completed");		
+			});
+			console.log("After promise task is invoked");
+		
+	</script>	 
+</body>
+</html>

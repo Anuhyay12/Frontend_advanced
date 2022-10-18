@@ -1,0 +1,34 @@
+<html>
+    <head>	<style>
+        .c1
+        {
+            border:1px solid gray;
+            height :  80px;
+            width :  70px;
+            border-radius : 5px;
+            padding : 5px;
+            margin : 5px;
+        }
+    </style></head>
+    <body>
+		<img class="c1" src="img1.jpg"      />
+		<img class="c1" src="img2.jpg"         />
+		<img class="c1" src="img3.jpg"       />
+		<img class="c1" src="img4.jpg"            />
+		<hr/>
+		<img   src="img1.jpg"  id="bigImg"  border="2"  width="340"  height="340"  />
+		
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                $(".c1").click(function()
+                {
+                    let op = $(this).attr("src");
+                    $("#bigImg").attr("src",op);
+                });
+
+            });
+        </script>
+    </body>
+</html>

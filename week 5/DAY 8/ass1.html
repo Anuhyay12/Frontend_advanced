@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            "jQuery"
+        </title>
+    </head>
+    <body>
+ 
+            <fieldset>
+                <legend>Product details</legend>
+            <label >Product name :</label>
+          <select id="pro">
+            <option id="mobiles">option1</option>
+            <option id="tablets" >option2</option>
+          </select>
+            <br><br>
+          <label>Product Price :</label>
+          <input type="text"id="ip2"/><br><br>
+          <label>Product quantity :</label>
+          <input type="text"id="ip3"/> <br> <br>
+<input type="button"name="button"value="Total amount"id="ip4"onclick="fn_getAmount()"/>
+<p id="p1"></p>
+            </fieldset>
+           
+            <script src="jquery-3.6.1.min.js"></script>
+            <script>
+                function fn_getAmount()
+                {
+                    var nam = $("#pro option:selected").attr("id");  
+                    let prc= $("#ip2").val();
+                    let qty = $("#ip3").val();
+                   
+                    Amt = (prc)*(qty);
+                    $("#p1").html("Total Amount for "+ nam +" is :"+Amt);
+                }
+            </script>
+      
+    </body>
+</html>
