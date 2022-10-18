@@ -1,0 +1,1 @@
+window.alert("This is a javascript file named Clientscript1");

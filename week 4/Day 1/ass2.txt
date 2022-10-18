@@ -1,0 +1,27 @@
+1.
+
+Yes, It is possible to disable javascript.
+Steps:
+*Select settings from drop-down menu.
+*Click Privacy and Security --> Site settings.
+*Scroll down, go to Content Section, Click javascript and Select " Don't allow sites to use javascript".
+
+2.
+
+Undefined - When the variable is not declared
+Not Defined - When the variable is not assigned with value.
+
+3.
+Java is Object Oriented Programming language whereas JavaScript is OOp scripting language.
+Java applications run in virtual machine or browser while javascript code runs in browser only.
+
+4.
+There are eight basic data types in javascript.
+* String 
+* Number
+* BigInt
+* Boolean
+* Undefined
+* null
+* symbol
+* Object

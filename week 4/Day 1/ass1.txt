@@ -1,0 +1,17 @@
+1.
+JavaScript Client Side Features :
+
+*Control Document Appearance and Content
+*Control the Browser
+*Interact with HTML Forms
+*Interact with the User
+*Read and Write Client State with Cookies
+
+2.
+JavaScriptCore is Apple's engine for its Safari Browser.
+
+4.
+When tried with wrong names- it give the error : "Failed to load"
+
+File names are not case sensitive. There will be no difference.
+

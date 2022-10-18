@@ -1,0 +1,10 @@
+1.
+
+== is used for comparing two variables and === is used for comparing two variables along with data type.
+
+2.
+
+NaN() function - Not a Number function- returns true if argument is not a number, otherwise returns false.
+
+3.
+Client-side means that the JavaScript code is run on the client machine, which is the browser. Server-side JavaScript means that the code is run on the server which is serving web pages.
